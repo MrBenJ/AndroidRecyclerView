@@ -9,7 +9,18 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 /**
+ * This Adapter is used for the RecyclerView.
  *
+ * Like the original ListView, RecyclerView takes it's own adapter returning a View. In using
+ * RecyclerView, we are extending RecyclerView.Adapter<YourAdapterName.ViewHolder> instead of
+ * BaseAdapter. You still need to use the ViewHolder pattern just like before, but the main trade
+ * is that you don't require using getTag() on each view to see if it's created or not.
+ *
+ * Also, the adapter's constructor is much easier, as you just pass in whatever data you're looking
+ * for, then set the RecyclerView's adapter in your activity. Boom. Done.
+ *
+ * While the code isn't quite as fresh, it's still pretty new and hopefully Google will be updating
+ * it soon, so the amount of code written isn't so heavy.
  *
  * Created by benjunya on 8/27/15.
  */

@@ -19,14 +19,27 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        // Some Dummy Data
         ArrayList<String> myDataset = new ArrayList<>();
         myDataset.add(0, "Hello");
         myDataset.add(1, "Hi");
         myDataset.add(2, "Hello");
         myDataset.add(3, "Hel");
-
+        // Your standard view linking
         mRecyclerView = (RecyclerView) findViewById(R.id.cardList);
 
+
+        /**
+         *
+         * When using RecyclerView, you don't need to set a fixed size,
+         * but you should really set a layout manager. The layout manager
+         * sets how all the list items will be viewed (linear is most common
+         * from what I'm inferring).
+         *
+         * If you don't specify a layout manager, then it's ok. Defaults are available
+         * from good ol' Google.
+         */
         mRecyclerView.setHasFixedSize(true);
 
         mLayoutManager = new LinearLayoutManager(this);

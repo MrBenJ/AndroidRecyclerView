@@ -11,9 +11,6 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
-    private RecyclerView.LayoutManager mLayoutManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,8 +23,9 @@ public class MainActivity extends AppCompatActivity {
         myDataset.add(1, "Hi");
         myDataset.add(2, "Hello");
         myDataset.add(3, "Hel");
+
         // Your standard view linking
-        mRecyclerView = (RecyclerView) findViewById(R.id.cardList);
+        RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.cardList);
 
 
         /**
@@ -40,13 +38,16 @@ public class MainActivity extends AppCompatActivity {
          * If you don't specify a layout manager, then it's ok. Defaults are available
          * from good ol' Google.
          */
+
+
         mRecyclerView.setHasFixedSize(true);
 
-        mLayoutManager = new LinearLayoutManager(this);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        mAdapter = new MyAdapter(myDataset);
+        RecyclerView.Adapter mAdapter = new MyAdapter(myDataset);
         mRecyclerView.setAdapter(mAdapter);
+
     }
 
     @Override
